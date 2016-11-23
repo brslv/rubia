@@ -1,0 +1,20 @@
+Entities
+--------
+
+* Player
+* Question
+    - OneAnswerQuestion
+    - MultiAnswerQuestion
+    - OpenAnswerQuestion
+* Answer
+* Score
+* Message - encapsulates success, error, prompt messages
+* Command - encapsulates commands sc, wt, ex...
+
+Services
+--------
+
+* Loop                  - represents the game loop
+* Printer               - used for printing messages, questions etc.
+    - TerminalPrinter   - prints on the terminal
+* Prompt                - encapsulates prompts and their answers

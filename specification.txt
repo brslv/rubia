@@ -1,0 +1,64 @@
+Create a trivia (questions and answers style) game with Ruby, using OOP concepts and good practices.
+
+The main goal for this application is learning the "ruby way" of OOP.
+
+I. The process
+--------------
+
+1. The program is ran in the terminal the game's folder with the command "ruby play.rb".
+2. The player is asked for a name.
+3. "OK, #{name}, let's see what you got!"
+4. The game begins:
+    * The player's initial score is 10 points!
+    4.1. The player is asked a question from the repository of questions.
+    4.2. He enters an answer.
+    4.3. Answer -> correct?
+        4.3.1. The score for the player increases with the weight of the question.
+        4.3.2. A success message is shown to the player.
+        4.3.3. The score is shown to the player.
+        4.3.4. If the question has aditional information about the topic, it's shown to the player, too.
+    4.4. Answer -> wrong?
+        4.4.1. The player losses points, equal to the question's weight.
+        4.4.2. If the player's score is <= 0 - the game ends.
+            4.4.2.1. A message with the score is shown.
+            4.4.2.2. The player is asked if he wants to play again.
+        4.4.3. If the player's score is still > 0 - another question is displayed.
+5. The game ends if the player's score is <= 0, or if there are no more questions.
+    5.1. If all the possible questions are answered correctly - the score is doubled.
+
+II. Questions
+-------------
+* Three types of questions:
+    - One-answer-questions          - questions, which have only one correct option (a,b,c,d..)
+    - Multiple-answers-questions    - questions, which have two or more correct options
+    - Open-questions                - questions, which expect a correct answer, without giving any options
+
+* Each of the question entities have:
+    - Question                      - the question to be asked
+    - Options                       - a, b, c, d - optional, if the question is of type open-answer
+    - Weight                        - the weight of the topic - (1..5) - given by the author of the question
+    - Additional information        - short snippet with additional information about the topic the question is about
+
+III. Players
+------------
+* Each game has one player.
+* The player has a score
+    - Initial value of the score is 10
+    - Each correct answer => score += answer's weight
+    - Each wrong answer   => score -= answer's weight
+    - If score is <= 0    => game ends
+
+IV. Notes
+---------
+
+* On each prompt for the player, he/she can type a _specific code_ to display a desired usefull information for the game:
+    - sc || score       -> display the player's current score
+    - wt || weight      -> display the current answer's weight
+    - ex || exit        -> quit the game
+    - new               -> starts a new game => a prompt should be provided - "Are you sure you want to start a new game? (Y/N)"
+
+V. Main goals
+--------------
+
+* Code simplicity
+* Game simplicity - no complicated texts, moves and descisions. Just a simple game play.
